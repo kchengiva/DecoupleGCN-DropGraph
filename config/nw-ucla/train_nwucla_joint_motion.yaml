@@ -1,0 +1,42 @@
+Experiment_name: NW-UCLA_joint_motion
+
+# feeder
+feeder: feeders.feeder_nw.Feeder
+train_feeder_args:
+  data_path: joint_motion
+  label_path: train
+  debug: False
+  random_choose: True
+  random_shift: False
+  random_move: False
+  window_size: 52
+  normalization: False
+
+test_feeder_args:
+  data_path: joint_motion
+  label_path: val
+# model
+model: model.decouple_gcn.Model
+model_args:
+  num_class: 28
+  num_point: 20
+  num_person: 1
+  graph: graph.nw_ucla.Graph
+  groups: 16
+  block_size: 11
+  graph_args:
+    labeling_mode: 'spatial'
+
+#optim
+weight_decay: 0.0001
+base_lr: 0.1
+step: [120, 160]
+
+# training
+device: [0]
+keep_rate: 0.9
+only_train_epoch: 1
+batch_size: 4
+test_batch_size: 64
+num_epoch: 200
+nesterov: True
