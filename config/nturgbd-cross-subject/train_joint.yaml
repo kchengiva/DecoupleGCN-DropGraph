@@ -37,7 +37,7 @@ step: [60, 80]
 device: [0,1,2,3]
 keep_rate: 0.9
 only_train_epoch: 1
-batch_size: 4
+batch_size: 64
 test_batch_size: 64
 num_epoch: 100
 nesterov: True

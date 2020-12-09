@@ -18,7 +18,7 @@ test_feeder_args:
 # model
 model: model.decouple_gcn.Model
 model_args:
-  num_class: 28
+  num_class: 10
   num_point: 20
   num_person: 1
   graph: graph.nw_ucla.Graph
