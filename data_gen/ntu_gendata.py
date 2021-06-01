@@ -104,7 +104,7 @@ def gendata(data_path, out_path, ignored_sample_path=None, benchmark='xview', pa
     # print(data_path)
     for filename in os.listdir(data_path):
         # print(ignored_samples)
-        if filename in ignored_samples:
+        if filename in ignored_samples or filename == os.path.basename(ignored_sample_path)::
             continue
         # print('==============')
         # print(filename)
