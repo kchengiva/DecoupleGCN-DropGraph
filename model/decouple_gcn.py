@@ -229,6 +229,7 @@ class Model(nn.Module):
 
         # N*M,C,T,V
         c_new = x.size(1)
+        x = x.contiguous()
         x = x.view(N, M, c_new, -1)
         x = x.mean(3).mean(1)
 
