@@ -238,7 +238,7 @@ class Processor():
                 with open(self.arg.weights, 'r') as f:
                     weights = pickle.load(f)
             else:
-                weights = torch.load(self.arg.weights)
+                weights = torch.load(self.arg.weights, weights_only=True)
 
             weights = OrderedDict(
                 [[k.split('module.')[-1],
